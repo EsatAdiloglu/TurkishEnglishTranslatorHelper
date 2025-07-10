@@ -1,7 +1,8 @@
 "use client"
 
-import { Box, FormControl, Grid, InputAdornment, InputLabel, OutlinedInput, Stack, TextField } from "@mui/material";
+import { Box, Grid, OutlinedInput, TextField } from "@mui/material";
 import { useState } from "react";
+import FormControl, { useFormControl } from '@mui/material/FormControl';
 
 
 export default function Home() {
@@ -17,24 +18,31 @@ export default function Home() {
           justifyContent: "center",
           alignItems: "center",
         }}>
-          <TextField
+          {/* <TextField
           id="filled-multiline-flexible"
           placeholder="Your sentence goes here..."
           variant="filled"
           multiline
           rows={15}
           onChange={event => setOriginal(event.target.value)}
+          color=""
           sx={{
             width: "35vw",
             '& .MuiInputBase-input': {fontSize: '20px'}
           }}
-          ></TextField>
+          ></TextField> */}
+          <form autoComplete="off">
+            <FormControl sx={{width:"35vw"}}>
+              <OutlinedInput placeholder="Your sentence goes here..." multiline minRows={15} maxRows={15} sx={{fontSize:"1.2rem", lineHeight:1.2}}/>
+            </FormControl>
+          </form>
           <TextField
           id="filled-multiline-flexible"
           placeholder="The translated sentence will appear here..."
-          variant="filled"
+
           multiline
           rows={15}
+          disabled
           sx={{
             width: "35vw",
             '& .MuiInputBase-input': {fontSize: '20px'}
