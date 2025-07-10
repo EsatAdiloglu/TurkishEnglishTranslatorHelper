@@ -18,19 +18,6 @@ export default function Home() {
           justifyContent: "center",
           alignItems: "center",
         }}>
-          {/* <TextField
-          id="filled-multiline-flexible"
-          placeholder="Your sentence goes here..."
-          variant="filled"
-          multiline
-          rows={15}
-          onChange={event => setOriginal(event.target.value)}
-          color=""
-          sx={{
-            width: "35vw",
-            '& .MuiInputBase-input': {fontSize: '20px'}
-          }}
-          ></TextField> */}
           <form autoComplete="off">
             <FormControl sx={{width:"35vw"}}>
               <OutlinedInput placeholder="Your sentence goes here..." multiline minRows={15} maxRows={15} sx={{fontSize:"1.2rem", lineHeight:1.2}}/>
@@ -39,7 +26,6 @@ export default function Home() {
           <TextField
           id="filled-multiline-flexible"
           placeholder="The translated sentence will appear here..."
-
           multiline
           rows={15}
           disabled
