@@ -3,26 +3,28 @@
 import { Box, Grid, OutlinedInput, TextField } from "@mui/material";
 import { useState } from "react";
 import FormControl, { useFormControl } from '@mui/material/FormControl';
+import InputField from "@/components/InputField";
 
 
 export default function Home() {
   const [original, setOriginal] = useState<String>("")
 
+  const handleInputChange = (requestJSON: Object) => {
+    console.log("Received requestJSON:", requestJSON);
+    // Here you can handle the requestJSON, e.g., send it to an API
+  };
+
   return (
     <div>
       <Box mt={30}>
-        <Grid 
-        container 
+        <Grid
+        container
         spacing={0.5}
         sx={{
           justifyContent: "center",
           alignItems: "center",
         }}>
-          <form autoComplete="off">
-            <FormControl sx={{width:"35vw"}}>
-              <OutlinedInput placeholder="Your sentence goes here..." multiline minRows={15} maxRows={15} sx={{fontSize:"1.2rem", lineHeight:1.2}}/>
-            </FormControl>
-          </form>
+          <InputField onChange={handleInputChange}/>
           <TextField
           id="filled-multiline-flexible"
           placeholder="The translated sentence will appear here..."
